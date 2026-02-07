@@ -2,28 +2,18 @@ import {defineField, defineType} from 'sanity'
 
 export const galleryImageItem = defineType({
   name: 'galleryImageItem',
-  title: 'Gallery Image Item',
+  title: 'Zdjęcie w galerii',
   type: 'object',
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'caption',
-      title: 'Caption',
-      type: 'string',
-    }),
-    defineField({
       name: 'altText',
-      title: 'Alt Text',
+      title: 'Opis alternatywny (ALT)',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'image',
-      title: 'Image',
+      title: 'Zdjęcie',
       type: 'image',
       options: {hotspot: true},
       validation: (rule) => rule.required(),
@@ -31,12 +21,10 @@ export const galleryImageItem = defineType({
   ],
   preview: {
     select: {
-      title: 'title',
       media: 'image',
     },
-    prepare({title, media}) {
+    prepare({media}) {
       return {
-        title: title || 'Untitled image',
         media,
       }
     },
@@ -45,18 +33,25 @@ export const galleryImageItem = defineType({
 
 export const gallery = defineType({
   name: 'gallery',
-  title: 'Gallery',
+  title: 'Galeria',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Tytuł',
       type: 'string',
-      initialValue: 'Main Gallery',
+      initialValue: 'Galeria główna',
     }),
     defineField({
       name: 'images',
-      title: 'Images',
+      title: 'Zdjęcia',
+      type: 'array',
+      of: [{type: 'galleryImageItem'}],
+      validation: (rule) => rule.min(1),
+    }),
+    defineField({
+      name: 'heroImages',
+      title: 'Zdjęcia hero',
       type: 'array',
       of: [{type: 'galleryImageItem'}],
       validation: (rule) => rule.min(1),
