@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export const galleryImageItem = defineType({
   name: 'galleryImageItem',
@@ -46,14 +46,12 @@ export const gallery = defineType({
       name: 'images',
       title: 'Zdjęcia',
       type: 'array',
-      of: [{type: 'galleryImageItem'}],
-      validation: (rule) => rule.min(1),
-    }),
-    defineField({
-      name: 'heroImages',
-      title: 'Zdjęcia hero',
-      type: 'array',
-      of: [{type: 'galleryImageItem'}],
+      of: [
+        defineArrayMember({
+          type: 'image',
+          options: {hotspot: true},
+        }),
+      ],
       validation: (rule) => rule.min(1),
     }),
   ],
