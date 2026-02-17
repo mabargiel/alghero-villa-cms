@@ -1,3 +1,4 @@
+import {areaHighlight} from './areaHighlight'
 import {gallery, galleryImageItem} from './galleryImage'
 import {hero} from './hero'
 import {homeSection} from './homeSection'
@@ -11,4 +12,5 @@ export const schemaTypes = [
   homeSection,
   miniGallery,
   gallery,
+  areaHighlight,
 ]
