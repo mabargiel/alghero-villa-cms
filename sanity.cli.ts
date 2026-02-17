@@ -5,6 +5,7 @@ export default defineCliConfig({
     projectId: 'x4fnelpw',
     dataset: 'dev'
   },
+  studioHost: 'algherocms',
   deployment: {
     /**
      * Enable auto-updates for studios.
