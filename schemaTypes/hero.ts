@@ -25,14 +25,13 @@ export const hero = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'videoUrl',
+      name: 'video',
       title: 'Wideo (desktop)',
-      type: 'url',
-      description: 'Opcjonalne. Gdy ustawione, zastępuje rotację zdjęć na desktopie.',
-      validation: (rule) =>
-        rule.uri({
-          scheme: ['http', 'https'],
-        }),
+      type: 'file',
+      description: 'Opcjonalne. Gdy ustawione, zastępuje rotację zdjęć na desktopie. Akceptuje MP4.',
+      options: {
+        accept: 'video/mp4',
+      },
     }),
   ],
   preview: {
