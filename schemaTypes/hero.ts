@@ -33,6 +33,15 @@ export const hero = defineType({
         accept: 'video/mp4',
       },
     }),
+    defineField({
+      name: 'videoLight',
+      title: 'Wideo lekkie (wolne połączenie)',
+      type: 'file',
+      description: 'Lżejsza wersja wideo dla wolnych połączeń (720p, niższy bitrate).',
+      options: {
+        accept: 'video/mp4',
+      },
+    }),
   ],
   preview: {
     select: {title: 'title'},
