@@ -4,6 +4,7 @@ const sectionOptions = [
   {title: 'Nieruchomość', value: 'property'},
   {title: 'Wnętrza', value: 'interiors'},
   {title: 'Ogród i tarasy', value: 'garden'},
+  {title: 'Plaże', value: 'beaches'},
   {title: 'Lokalizacja', value: 'location'},
 ]
 
