@@ -9,6 +9,7 @@ import {pricingConfig} from './pricingConfig'
 import {locationImageSet, locationPage} from './locationPage'
 import {pricingPromotion} from './pricingPromotion'
 import {pricingRange} from './pricingRange'
+import {villaExteriorImage, villaPage, villaRoomImages} from './villaPage'
 
 export const schemaTypes = [
   galleryImageItem,
@@ -22,6 +23,9 @@ export const schemaTypes = [
 
   pricingRange,
   pricingConfig,
+  villaRoomImages,
+  villaExteriorImage,
+  villaPage,
   locationImageSet,
   locationPage,
 ]
