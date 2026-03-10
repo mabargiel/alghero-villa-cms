@@ -6,6 +6,7 @@ import {mediaImage} from './mediaImage'
 import {miniGallery} from './miniGallery'
 import {pricingConfig} from './pricingConfig'
 
+import {locationImageSet, locationPage} from './locationPage'
 import {pricingPromotion} from './pricingPromotion'
 import {pricingRange} from './pricingRange'
 
@@ -21,4 +22,6 @@ export const schemaTypes = [
 
   pricingRange,
   pricingConfig,
+  locationImageSet,
+  locationPage,
 ]
