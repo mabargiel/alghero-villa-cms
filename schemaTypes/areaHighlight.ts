@@ -16,7 +16,7 @@ export const areaHighlight = defineType({
       title: 'Zdjęcia stref',
       type: 'array',
       description:
-        'Kolejność zdjęć musi odpowiadać kolejności stref w kodzie: 1) Sypialnie, 2) Salon, 3) Ogród, 4) Weranda',
+        'Kolejność zdjęć musi odpowiadać kolejności stref w kodzie: 1) Wnętrza, 2) Werandy, 3) Ogród, 4) Boisko',
       of: [{type: 'mediaImage'}],
       validation: (rule) => rule.max(4),
     }),
